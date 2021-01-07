@@ -8,8 +8,6 @@ import IconButton from '@material-ui/core/IconButton';
 import "rc-slider/assets/index.css";
 import "./Navbar.css"
 
-
-
 class Navbar extends Component {
     constructor(props){
         super(props);
