@@ -13,7 +13,7 @@ root: {
     }
 }, 
 colors: {
-    backgroundColor: "grey",
+    backgroundColor: "white"
 
 },
 title: {
