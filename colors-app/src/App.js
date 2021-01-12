@@ -4,6 +4,7 @@ import Palette from "./Palette";
 import seedColors from "./seedColors";
 import { generatePalette } from "./ColorHelpers";
 import PaletteList from "./PaletteList";
+import SingleColorPalette from "./SingleColorPalette"
 
 class App extends Component {
   findPalette(id) {
@@ -26,7 +27,7 @@ class App extends Component {
       />
     )}
     />
-    <Route path="/palette/:paletteId/:colorId" render={() => <h1>Single Color Page</h1>}/>
+    <Route path="/palette/:paletteId/:colorId" render={() => <SingleColorPalette />}/>
     </Switch>
   );
 }
