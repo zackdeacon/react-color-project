@@ -25,6 +25,7 @@ const styles = theme => ({
         }),
         flexDirection: "row",
         justifyContent: "space-between",
+        alignItems: "center",
         height: "64px"
     },
     appBarShift: {
@@ -40,7 +41,13 @@ const styles = theme => ({
         marginRight: 20
     },
     navBtns: {
-
+        marginRight: "1rem",
+        "& a" : {
+        textDecoration: "none"
+        }
+    },
+    button: {
+        margin: "0 0.5rem",
     }
 
 })
@@ -49,15 +56,20 @@ class PaletteFormNav extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            newPaletteName: ""
+            newPaletteName: "",
+            formShowing : false
         }
         this.handleChange = this.handleChange.bind(this);
+        this.showForm = this.showForm.bind(this);
     }
 
     handleChange(evt) {
         this.setState({
             [evt.target.name]: evt.target.value
         });
+    }
+    showForm() {
+        this.setState({ formShowing : true })
     }
     render() {
         const { classes, open, palettes, handleSubmit } = this.props;
@@ -70,15 +82,13 @@ class PaletteFormNav extends Component {
                     color="default"
                     className={classNames(classes.appBar, {
                         [classes.appBarShift]: open
-                    })}
-                >
+                    })}>
                     <Toolbar disableGutters={!open}>
                         <IconButton
                             color='inherit'
                             aria-label='Open drawer'
                             onClick={this.props.handleDrawerOpen}
-                            className={classNames(classes.menuButton, open && classes.hide)}
-                        >
+                            className={classNames(classes.menuButton, open && classes.hide)}>
                             <MenuIcon />
                         </IconButton>
                         <Typography variant='h6' color='inherit' noWrap>
@@ -86,18 +96,24 @@ class PaletteFormNav extends Component {
                 </Typography>
                     </Toolbar>
                     <div className={classes.navBtns}>
-                        <PaletteMetaForm palettes = {palettes} handleSubmit = {handleSubmit}/>
                         <Link to="/">
                             <Button
+                            className = {classes.button}
                                 variant="contained"
                                 color="secondary">
                                 Go Back
                                     </Button>
                         </Link>
+                        <Button 
+                        variant="contained" 
+                        className = {classes.button}
+                        color="primary" 
+                        onClick={this.showForm}>
+                    Save
+            </Button>
                     </div>
-
                 </AppBar>
-
+                {this.state.formShowing && <PaletteMetaForm palettes = {palettes} handleSubmit = {handleSubmit}/>}
             </div>
         )
     }
