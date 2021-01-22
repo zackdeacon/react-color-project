@@ -49,9 +49,7 @@ const styles = theme => ({
     button: {
         margin: "0 0.5rem",
     }
-
 })
-
 class PaletteFormNav extends Component {
     constructor(props) {
         super(props);
@@ -61,8 +59,8 @@ class PaletteFormNav extends Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.showForm = this.showForm.bind(this);
+        this.hideForm = this.hideForm.bind(this);
     }
-
     handleChange(evt) {
         this.setState({
             [evt.target.name]: evt.target.value
@@ -70,6 +68,11 @@ class PaletteFormNav extends Component {
     }
     showForm() {
         this.setState({ formShowing : true })
+    }
+    hideForm() {
+        this.setState({
+            formShowing: false
+        })
     }
     render() {
         const { classes, open, palettes, handleSubmit } = this.props;
@@ -113,7 +116,7 @@ class PaletteFormNav extends Component {
             </Button>
                     </div>
                 </AppBar>
-                {this.state.formShowing && <PaletteMetaForm palettes = {palettes} handleSubmit = {handleSubmit}/>}
+                {this.state.formShowing && <PaletteMetaForm palettes = {palettes} handleSubmit = {handleSubmit} hideForm={this.hideForm}/>}
             </div>
         )
     }
