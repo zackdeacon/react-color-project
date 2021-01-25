@@ -1,12 +1,13 @@
 export default {
     root: {
-        backgroundColor: "blue",
         height: "100vh",
         display: "flex",
         alignItems: "flex-start",
-        justifyContent: "center"
+        justifyContent: "center",
+        backgroundColor: "#394bad",
+        overflow: "scroll"
     },
-    conatiner: {
+    container: {
         width: "50%",
         display: "flex",
         alignItems: "flex-start",
