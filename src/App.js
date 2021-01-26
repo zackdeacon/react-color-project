@@ -31,11 +31,9 @@ class App extends Component {
     this.setState({ palettes : [...this.state.palettes, newPalette] }, this.syncLocalStorage);
 
   }
-
   syncLocalStorage() {
     window.localStorage.setItem("palettes", JSON.stringify(this.state.palettes));
   }
-
   render() {
   return (
     <Switch>
