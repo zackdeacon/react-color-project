@@ -30,12 +30,13 @@ export default {
         display: "flex",
         width: "100%",
         justifyContent: "space-between",
-        color: "white",
         alignItems: "center",
-        color: "white",
+        color: "black",
         "& a": {
-            color: "white",
-            textDecoration: "none"
+            color: "black",
+            textDecoration: "none",
+            fontWeight: "bold",
+            fontSize: "large"
         }
     },
     palettes: {
