@@ -7,6 +7,7 @@ export default {
         position: "relative",
         overflow: "hidden",
         cursor: "pointer",
+        boxShadow: "3px 3px 5px 6px #ccc",
         "&:hover svg": {
             opacity: 1
         }
