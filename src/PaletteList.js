@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
 import MiniPalette from "./MiniPalette";
 import Dialog from '@material-ui/core/Dialog';
@@ -57,8 +58,10 @@ class PaletteList extends Component {
             <div className = {classes.root}>
                 <div className = {classes.container}>
                     <nav className = {classes.nav}>
-                    <h1 className={classes.heading}>React Colors!!</h1>
-                    <Link to="/palette/new">Create Palette</Link>
+                    <h1 className={classes.heading}>Welcome!</h1>
+                    <Button variant="contained" className={classes.createBtn}>
+                    <Link to="/palette/new" className={classes.linkBtn}>Create Palette</Link>
+                    </Button>
                     </nav>
                     <TransitionGroup className = {classes.palettes}>
                     {palettes.map(palette => (

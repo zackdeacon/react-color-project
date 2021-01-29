@@ -42,10 +42,14 @@ export default {
         alignItems: "center",
         color: "black",
         "& a": {
-            color: "black",
+            color: "#2e4357",
             textDecoration: "none",
             fontWeight: "bold",
-            fontSize: "large"
+            fontSize: "1rem",
+            [sizes.down("xs")]:{
+            fontSize: "small"
+            }
+        
         }
     },
     palettes: {
@@ -66,5 +70,17 @@ export default {
     },
     heading: {
         fontSize: "2rem"
+    },
+    createBtn: {
+        backgroundColor: "#68e518",
+        border: "1px solid #3e9407",
+        "&:hover": {
+            backgroundColor: "#599a2f"
+        },
+        [sizes.down("xs")]:{
+        height: "2.5rem",
+        width: "3rem"
+        }
+    
     }
 };
